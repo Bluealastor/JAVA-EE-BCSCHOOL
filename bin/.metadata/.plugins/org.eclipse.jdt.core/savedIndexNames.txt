@@ -1,0 +1,3 @@
+INDEX VERSION 1.134+C:\Users\Christian\Documents\workspace-spring-tool-suite-4-4.21.1.RELEASE\EserciziBcSchool\bin\.metadata\.plugins\org.eclipse.jdt.core
+2094534650.index
+3728532491.index
