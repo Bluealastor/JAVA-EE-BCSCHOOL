@@ -1,0 +1,198 @@
+1) Titoli dei libri pubblicati prima del 2022 ordinati in ordine di prezzo
+SELECT libro.Titolo , libro.AnnoData, libro.Prezzo FROM libro WHERE libro.AnnoData < "2022-01-01" ORDER BY libro.Prezzo ASC
+
+2) Titoli dei libri pubblicati a partire dal 1700
+SELECT libro.Titolo , libro.AnnoData FROM libro WHERE libro.AnnoData >= "1700-01-01" ORDER BY libro.AnnoData ASC
+
+
+3) ID e titolo dei libri per cui non sono stati girati film
+SELECT libro.ID, libro.Titolo, film.ID_libro FROM libro LEFT JOIN film ON film.ID_libro = libro.ID WHERE film.ID_libro IS NULL
+
+4) Cognome degli autori di tutti i libri ordinati in ordine alfabetico per cognome
+SELECT DISTINCT autore.Cognome FROM autore 
+INNER JOIN libro ON libro.Autore = autore.Cognome
+ORDER BY autore.Cognome ASC
+
+5) Cognomi degli autori non italiani ordinati in ordine alfabetico per cognome
+SELECT DISTINCT autore.Cognome FROM autore  WHERE autore.Nazionalità NOT LIKE "Italiana"
+
+
+6) Registi di film che si rifanno a libri scritti da autori americani
+SELECT film.Regista FROM film 
+INNER JOIN libro ON film.ID_libro = libro.ID
+INNER JOIN autore ON libro.Autore = autore.Cognome
+WHERE autore.Nazionalità LIKE "americana"
+
+7) Anno in cui è stato pubblicato il libro più antico con il rispettivo titolo
+SELECT  MIN(libro.AnnoData) AS "Anno publicazione", libro.Titolo FROM libro 
+
+
+8) Titolo dei libri di autori ancora in vita
+SELECT autore.Cognome, libro.Autore FROM autore
+INNER JOIN libro ON libro.Autore = autore.Cognome
+WHERE autore.AnnoData IS NULL
+
+9) Titolo dei libri di autori non più in vita
+SELECT DISTINCT autore.Cognome, libro.Autore FROM autore
+INNER JOIN libro ON libro.Autore = autore.Cognome
+WHERE autore.AnnoData IS NOT NULL
+
+
+
+10) Titoli dei film creati su libri che sono fumetti
+SELECT film.Titolo FROM film
+INNER JOIN libro ON libro.ID = film.ID_libro
+WHERE libro.Tipologia LIKE "fumetto"
+
+
+11) Film con titolo che inizia per “H”
+SELECT film.Titolo FROM film WHERE film.Titolo LIKE "H%"
+
+12) Romanzi con la parola Sposi nel titolo
+SELECT libro.Titolo FROM libro WHERE libro.Titolo LIKE "%Sposi%"4
+
+13) Manga con penultima lettera “t” nel titolo
+SELECT libro.Titolo FROM libro WHERE libro.Titolo LIKE "%t%" AND libro.Tipologia LIKE "Manga"
+
+14) Fumetti il cui titolo termina per “man”
+SELECT libro.Titolo FROM libro WHERE libro.Titolo LIKE "%man" AND libro.Tipologia LIKE "Fumetto"
+
+15) Il titolo, il regista e l’anno dei film tratti dal libro “Lo_hobbit”
+SELECT film.Titolo, film.Regista, film.AnnoData FROM film INNER JOIN libro ON libro.ID = film.ID_libro WHERE libro.Titolo LIKE "Lo_hobbit"
+
+16) Titoli dei fantasy pubblicati dopo il 1900 che hanno nel titolo la stringa “gno”
+SELECT libro.Titolo, libro.AnnoData FROM libro WHERE libro.Titolo LIKE "%gno%" AND libro.AnnoData > 1990-1-1 AND libro.Tipologia LIKE "fantasy"
+
+17) Romanzi di Manzoni su cui sono stati girati film e i rispettivi titoli dei film, rinomina il campo 
+della query risultante del titolo del libro con “titolo libro” e del titolo del film con “titolo film"
+SELECT libro.Titolo AS "titolo libro", film.Titolo AS "titolo film" FROM libro
+INNER JOIN autore ON autore.Cognome = libro.Autore
+INNER JOIN film ON film.ID_libro = libro.ID
+WHERE libro.Autore LIKE "Manzoni"
+
+
+18) Titoli dei libri scritti da Tolkien e relativi nomi e cognomi dei personaggi
+SELECT libro.Titolo, CONCAT(personaggio.Nome, " ",personaggio.Cognome) AS "Personaggi"
+FROM libro
+INNER JOIN autore ON autore.Cognome = libro.Autore
+INNER JOIN personaggio ON personaggio.ID_libro = libro.ID
+WHERE autore.Cognome LIKE "Tolkien"
+
+19) Libri in cui compare il personaggio Albus Silente
+SELECT libro.Titolo, CONCAT(personaggio.Nome, " ",personaggio.Cognome) AS "Personaggi" FROM libro
+INNER JOIN personaggio ON personaggio.ID_libro = libro.ID
+WHERE personaggio.Cognome LIKE "Silente" AND personaggio.Nome LIKE "Albus"
+
+20) Fantasy in cui è presente Bilbo Baggings
+SELECT libro.Titolo, CONCAT(personaggio.Nome, " ",personaggio.Cognome) AS "Personaggi" FROM libro
+INNER JOIN personaggio ON personaggio.ID_libro = libro.ID
+WHERE libro.Tipologia LIKE "fantasy" AND personaggio.Nome LIKE "Bilbo" AND personaggio.Cognome LIKE "Baggins"
+
+21) Titolo e anno di pubblicazione dei film il cui libro fantasy ha un personaggio che si chiama 
+Baggings
+SELECT film.Titolo, CONCAT(personaggio.Nome, " ",personaggio.Cognome) AS "Personaggi" FROM libro
+INNER JOIN personaggio ON personaggio.ID_libro = libro.ID
+INNER JOIN film ON film.ID_libro = libro.ID
+WHERE libro.Tipologia LIKE "fantasy" AND personaggio.Cognome LIKE "Baggins"
+
+22) Titoli dei libri da cui è stato tratto un film
+SELECT libro.Titolo AS "Film ispirati a libri" FROM libro
+LEFT JOIN film ON film.ID_libro = libro.ID
+WHERE film.ID_libro IS NOT NULL
+
+23) Quanti fantasy ci sono in libri
+SELECT COUNT(libro.Tipologia) AS "Numero libri Fantasy" FROM libro
+WHERE libro.Tipologia LIKE "Fantasy"
+
+24) Conta quanti film ha girato il regista Jackson e rinomina il campo della query risultante con “film 
+di Jackson”
+SELECT COUNT(film.Regista) AS "Film di Jackson" FROM film
+WHERE film.Regista LIKE "Jackson"
+
+25) Nomi e cognomi dei personaggi del film “I_promessi_sposi”
+SELECT personaggio.Nome, personaggio.Cognome FROM personaggio
+INNER JOIN libro ON libro.ID = personaggio.ID_libro
+INNER JOIN film ON film.ID_libro = libro.ID
+WHERE film.Titolo LIKE "I_promessi_sposi"
+
+26) Titolo, Regista e nome del libro da cui il film è tratto, dei film prodotti dal 2000 al 2022, con i 
+campi titolo libro e titolo film rinominati rispettivamente con “titolo libro” e “titolo film”
+SELECT film.Titolo AS "titolo film", film.Regista, libro.Titolo AS "film libro" 
+FROM film
+INNER JOIN libro ON libro.ID = film.ID_libro
+WHERE Film.AnnoData BETWEEN '2000-01-01' AND '2022-12-31'
+
+
+27) Titoli dei film tratti da libri i cui autori sono di nazionalità inglese o americana
+SELECT film.Titolo FROM film
+INNER JOIN libro ON film.ID_libro = libro.ID
+INNER JOIN autore ON libro.Autore = autore.Cognome
+WHERE autore.Nazionalità LIKE "americana" OR  autore.Nazionalità LIKE "inglese"
+
+28) Aggiungi un campo alla tabella personaggio chiamato “campo_vuoto” di tipo varchar (10)
+ALTER TABLE personaggio ADD campo_vuoto VARCHAR(10)
+
+29) Nomi dei libri e genere in cui compare Peter Parker
+SELECT libro.Titolo, libro.Tipologia FROM libro 
+INNER JOIN personaggio ON personaggio.ID_libro = libro.ID
+WHERE personaggio.Nome LIKE "Peter" AND personaggio.Cognome LIKE "Parker" 
+
+30) Nomi dei film di fumetti scritti da autori asiatici
+SELECT film.Titolo
+FROM Film
+INNER JOIN Libro ON Film.ID_libro = Libro.ID
+INNER JOIN Autore ON Libro.Autore = Autore.Cognome
+WHERE Autore.Nazionalità = 'giapponese'
+AND Libro.Tipologia = 'fumetto';
+
+
+31) Titoli dei film, nomi dei relativi personaggi, il cui registra è Columbus
+SELECT film.Titolo, CONCAT(personaggio.Nome, " ", personaggio.Cognome) AS "personaggi" FROM film
+INNER JOIN libro ON libro.ID = film.ID_libro
+INNER JOIN personaggio ON personaggio.ID_libro = libro.ID
+WHERE film.Regista LIKE "Columbus"
+
+
+32) Titolo del libro più costoso
+SELECT libro.Titolo, MAX(libro.Prezzo) FROM libro
+
+33) Nomi e cognomi di tutti i personaggi dei fantasy
+SELECT CONCAT(personaggio.Nome, " ", personaggio.Cognome) AS "personaggi nei fantasy" FROM personaggio
+INNER JOIN libro ON libro.ID = personaggio.ID_libro
+WHERE libro.Tipologia LIKE "fantasy"
+
+34) Libri che non hanno i corrispettivi personaggi principali nella tabella Personaggio
+SELECT libro.Titolo FROM personaggio
+RIGHT JOIN libro ON libro.ID = personaggio.ID_libro
+WHERE personaggio.ID_libro IS NULL
+
+
+35) Titolo del film in cui compare un personaggio che si chiama Frodo e indicare il genere del libro da 
+cui è tratto il film
+SELECT film.Titolo, libro.Tipologia FROM libro
+INNER JOIN film ON film.ID_libro = libro.ID
+INNER JOIN personaggio ON personaggio.ID_libro = libro.ID
+WHERE personaggio.Nome LIKE "Frodo"
+
+
+36) Quanti autori non italiani sono presenti in Autore
+SELECT COUNT(autore.Nazionalità) AS " Totale autori non italiani" FROM autore WHERE autore.Nazionalità NOT LIKE "italiana"
+
+37) Quanti manga sono presenti nel DB
+SELECT COUNT(libro.Tipologia) AS "Totale Manga" FROM libro WHERE libro.Tipologia LIKE "manga"
+
+
+38) Quanti manga non hanno un film correlato
+SELECT COUNT(libro.Titolo) AS "Totale Manga" , libro.Titolo FROM libro
+LEFT JOIN film ON film.ID_libro = libro.ID
+WHERE libro.Tipologia LIKE "manga"
+
+39) Titoli dei film girati da “Jackson” e rispettivo anno di uscita in un campo rinominato “anno di 
+uscita”
+SELECT film.Titolo, film.AnnoData AS "anno di uscita" FROM film
+WHERE film.Regista LIKE "Jackson"
+
+40) Quanti libri ha scritto Dante
+SELECT COUNT(libro.Autore) FROM libro
+INNER JOIN autore ON autore.Cognome = libro.Autore
+WHERE autore.Cognome LIKE "Dante"

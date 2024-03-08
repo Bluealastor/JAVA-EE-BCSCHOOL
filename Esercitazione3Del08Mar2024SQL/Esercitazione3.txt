@@ -1,0 +1,120 @@
++ A – Rispondi alle seguenti domande argomentando la risposta: 
++ 1) Che differenza c’è tra dati e database?
+  + I dati sono informazioni che possono essere salvati e manipolati
+  + i database sono "Contenitori" per le informazioni che salviamo 
+
++ 2) Cosa si intende per Data Modeling?
+  + E' il processo di creazione di una rappresentazione di dati e delle relazioni, processo coinvolge la progettazione e la definizione di come i dati saranno organizzati, archiviati e utilizzati in un dbms
+
++ 3) Cos’è un DBMS e quali sono le sue principali applicazioni?
+  + E' un software progettato per creare, manipolare e gestire database
+
++ 4) Si può avere più di un valore per cella?
+  +  Con SQL non si può avere più di un valore per cella
+
++ 5) Che differenza c’è tra entità ed attributo?
+ + Per entità si intende un oggetto o un concetto che può essere identificato e descritto da dati mentre per attributi si intendono le caratteristiche di un attributo come ad esempio per una entita macchina gli attributi potranno essere: il colore, la targa e il modello
+
++ 6) Che cos’è un’istanza?
+  + In java un'istanza si riferisce a un oggetto specifico di una classe e lo creiamo quando inseriamo il termine new
+  + In SQL un'istanza si riferisce a una riga specifica all'interno di una tabella
+
++ 7) Quali sono le cardinalità delle relazioni?
+  + Le cardinalità delle relazioni sono:
+    + one to one: relazione 1 ad 1, una singola istanza di un'entità è associata a una sola istanza di un'altra entità
+    + one to many: una singola istanza può essere associata a più istanze di un altra entità
+    + many to many: quando le istanze di una entità possono avere più istanze in un altra entita e viceversa in contemporanea, pratica se possibile da evitare e cercare di trosformare questa relazione in più one to many
+
++ 8) Cos’è la cardinalità di una tabella? È importante?
+  + per cardinalità si intendono le colonne e le righe che costituisce la tabella dell'entità ed è importante ai fini della creazione dell'entita e delle sue relalazioni all'interno di un Data Base
+
++ 9) Cosa intendiamo per integrità dei dati? E per integrità referenziale?
+  + Per itegrità intendiamo la rappresentazione di una istanza che attraverso Primary Key viene identificatà come unica 
+  + integrità referenziale é la chiave esterna che deve esistere in un valore di chiave primaria nella tabella associata
+
++ 10) Come è possibile raffinare lo schema di un database?
+  + le entità devono partecipare alle relazioni e non possono essere scollegate dalle altre
+  + due entita in una relazione one to one possono essere unificate in un unica entità che contiene entrambi gli attributi
+  + semplificare una relazione many to many in più relazioni one to many
+  + semplificare le relazioni complese in relazioni binarie
+  + eliminare le relazioni ridondanti 
+ 
+ + 11) Cosa sono le chiavi e che tipi di chiavi è possibile avere in un database relazionale?
+  + le chiavi sono importanti in un database e servono ad identificare una singola entità e a creare le relazioni tra le entità di un database
+  + Primary Key: serve ad identificare in modo univoco ad una istanza
+  + Forein Key: utilizza le Primary Key per creare una relazione tra 2 entità
+
+ + 12) Cosa si intende per operazioni DDL, DML, DQL e se ne riporti un esempio di ciascun tipo
+  +  sono categorie di comandi utilizzati in SQL
+    + DDL: Data Definition Language sono utilizzate per definire la struttura dei dati nel database, inclusa la creazione, la modifica e l'eliminazione degli oggetti del database
+       + CREATE TABLE libro(ID_libro INT(6) AUTO INCREMENT PRIMARY KEY, Titolo VARCHAR(20), prezzo DECIMAL(10,2))
+    + DML: Data Manipulation Language vengono utilizzate per manipolare i dati all'interno delle tabelle
+       + INSERT INTO libro(titolo, prezzo) VALUES("Il vecchio e il mare", 12.2)
+    +  DQL: Data Query Language vengono utilizzate per interrogare i dati all'interno delle tabelle
+       + SELECT titolo, prezzo FROM libro
+
++ 13) Cosa sono i vincoli?
+  + sono condizioni che impostiamo ai dati come ad esempio PRIMARY KEY, NOT NULL per garantire un integrità dei dati
+
++ 14) Cos’è la manipolazione dei dati?
+  + per la manipolazione dei ddati si intendono le operazioni che noi creiamo per eliminare modificare o aggiornare i dati
+
++ 15) Cosa si intende per atomico?
+  +  i valori delle colonne sono atomici e non sono formati da campi composti, Il vantaggio della proprietà dei valori è costituito  dalla possibilità di adottare logiche di manipolazione dei dati più semplici e più efficienti
+
+
++ 16) Qual è il significato del termine NULL?
+  + Per NULL si intende un valore mancante di una tabella
+
++ 17) A cosa serve la Dot notation?
+  + è una convenzione di scrittura utilizzata nei linguaggi di programmazione per indicare relazioni a membri o attributi di oggetti o strutture di dati annidate
+
+
++ 18) Fai un esempio di utilizzo dell’Alias.
+  + SELECT libro.titolo, COUNT(libro.costo) AS "costo totale" FROM libro
+
++ 19) Quando utilizziamo ALTER? E UPDATE?
+ + ALTER viene utilizzato per modificare la struttura degli oggetti del database esistenti, inserendo o eliminando dei campi
+ +  UPDATE viene utilizzato per modificare i dati esistenti all'interno dei campi esistenti
+
++ 20) Perché utilizziamo UNIQUE per un attributo?
+  + UNIQUE lo utilizziamo per creare un valore unico e non ripetibile all'interno delle entità, di default quando usiamo PRIMARY KEY quel dato viene impostato UNIQUE
+
++ 21) Che cos’è una query?
+  + la query è una richiesta o una istruzione che viene eseguita per recuperare dati da un database, sono utilizzate per interrogare il database al fine di ottenere informazioni o per eseguire operazioni di inserimento, aggiornamento o l'eliminazione dei dati.
+
++ 22) Quali wildcards conosci? Spiega il loro utilizzo.
+  + wildcards sono caratteri speciali utilizzati per sostituire o rappresentare altri caratteri
+    + in SQL il "%" Rappresenta zero, uno o più caratteri in una stringa.
+    + in SQL il "_" Rappresenta un singolo carattere in una stringa.
+    + in java il "?" Rappresenta un tipo di dato sconosciuto o non specificato.
+
+
++ 23) Qual è la differenza tra DROP e DELETE?
+  + DROP viene utilizzato per eliminare oggetti del database come tabelle o gli stessi DATABASE
+  + DELETE viene utilizzato per rimuovere righe specifiche di dati
+
++ 24) A cosa serve auto increment?
+  + AUTO INCREMENT viene utilizzato per aumentare di 1 un valore utilizzato esclusivamente per i valori INT come ad esempio gli ID che impostiamo come PRIMARY KEY per non dover aggiungere un valore ogni volta che inseriamo una nuova istanza
+
+
++ 25) Cos’è una join?
+  + con Join noi creiamo una combinazione di dati tra più tabelle 
+
++ 26) Qual è la differenza tra left join e right join?
+  + left join: Restituisce tutte le righe dalla tabella a sinistra e le righe corrispondenti dalla tabella a destra e se non ci sono corrispondenze nella tabella a destra vengono restituiti valori NULL
+  + right join: : Restituisce tutte le righe dalla tabella a destra e le righe corrispondenti dalla tabella a sinistra e se non ci sono corrispondenze nella tabella a sinistra vengono restituiti valori NULL
+
++ 27) Differenza tra WHERE e ON.
+  + WHERE : può essere utilizzata per applicare condizioni di filtro basate sui valori delle colonne.
+  + ON: Viene utilizzata esclusivamente nelle clausole JOIN per definire le condizioni in base alle quali le righe delle tabelle vengono combinate.
+
+ + 28) Quale clausola permette di evitare il ripetersi di righe duplicate in una query SQL?
+  + la clausola che non permette il ripetersi di un dato in una query è DISTINCT
+
++ 29) Quali sono gli operatori aggregati?
+  + gli operatori aggregati sono: SUM(), MAX(), MIN(), COUNT(), GROUP_CONCAT()
+
+
+30) Quando e perché utilizziamo Query annidate?
+  + 1per ottenere risultati complessi o correlati che non possono essere ottenuti con una singola query
