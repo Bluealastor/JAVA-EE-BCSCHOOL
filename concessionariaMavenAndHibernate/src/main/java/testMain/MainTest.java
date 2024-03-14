@@ -21,19 +21,19 @@ public class MainTest {
 //		listaPersona.add(new Persona("Valentino","Rossi","Italia", "Pilota", 45));
 		
 		InterfacciaDao<Automobile> automobileDao = new AutomobileDaoImpl();
-		List<Automobile> listaAutomobile = new ArrayList<>();
-		listaAutomobile.add(new Automobile("mercedes","Classe A", "AE000IO", "A1BCD0","Posteriore"));
-		listaAutomobile.add(new Automobile("Ferrari","PuroSangue", "UY123IO", "A1BCD0","Posteriore"));
-		listaAutomobile.add(new Automobile("Bugatti","Veiron", "AE000IO", "A1BCD0","Posteriore"));
-		listaAutomobile.add(new Automobile("Lamborghini","Guntach", "AE000IO", "A1BCD0","Posteriore"));
-		listaAutomobile.add(new Automobile("McLaren","750S", "AE000IO", "A1BCD0","Posteriore"));
+//		List<Automobile> listaAutomobile = new ArrayList<>();
+//		listaAutomobile.add(new Automobile("mercedes","Classe A", "AE000IO", "A1BCD0","Posteriore"));
+//		listaAutomobile.add(new Automobile("Ferrari","PuroSangue", "UY123IO", "A1BCD0","Posteriore"));
+//		listaAutomobile.add(new Automobile("Bugatti","Veiron", "AE000IO", "A1BCD0","Posteriore"));
+//		listaAutomobile.add(new Automobile("Lamborghini","Guntach", "AE000IO", "A1BCD0","Posteriore"));
+//		listaAutomobile.add(new Automobile("McLaren","750S", "AE000IO", "A1BCD0","Posteriore"));
 //		personaDao.insertMany(listaPersona);
 //		System.out.println(personaDao.findAll());
 //		System.out.println(personaDao.findOne(6));
 		
 //		automobileDao.insertMany(listaAutomobile);
 		System.out.println(automobileDao.findOne(2));
-		System.out.println(automobileDao.findAll());
+//		System.out.println(automobileDao.findAll());
 
 	}
 

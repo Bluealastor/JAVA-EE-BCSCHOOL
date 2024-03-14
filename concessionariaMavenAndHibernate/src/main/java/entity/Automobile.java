@@ -32,7 +32,8 @@ public class Automobile {
 	@Column
 	private String trazione;
 
-	public Automobile() {};
+	public Automobile() {}
+	
 	public Automobile(String marca, String modello, String targa, String numero_telaio, String trazione) {
 		super();
 		this.marca = marca;
@@ -92,6 +93,7 @@ public class Automobile {
 
 	@Override
 	public String toString() {
+		
 		return "Automobile [id=" + id + ", marca=" + marca + ", modello=" + modello + ", targa=" + targa
 				+ ", numero_telaio=" + numero_telaio + ", trazione=" + trazione + "]";
 	}

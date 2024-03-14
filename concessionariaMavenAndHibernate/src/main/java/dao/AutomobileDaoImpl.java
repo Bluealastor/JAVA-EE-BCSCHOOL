@@ -46,7 +46,7 @@ public class AutomobileDaoImpl implements InterfacciaDao<Automobile>{
 			Session session = sessionFactory.openSession();
 			
 			
-			Query<Automobile> query = session.createQuery("SELECT * FROM Automobile WHERE id = :id", Automobile.class);
+			Query<Automobile> query = session.createQuery("FROM Automobile WHERE id = :id", Automobile.class);
 			query.setParameter("id",id);
 			automobile = query.getSingleResult();
 			session.close();

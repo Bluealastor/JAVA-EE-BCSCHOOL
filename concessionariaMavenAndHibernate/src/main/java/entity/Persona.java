@@ -43,22 +43,63 @@ public class Persona {
 		this.professione = professione;
 		this.eta = eta;
 	}
+	
+	
 
-	public Persona(String nome, String cognome, String indirizzo, String professione, Integer eta) {
-		super();
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getCognome() {
+		return cognome;
+	}
+
+	public void setCognome(String cognome) {
 		this.cognome = cognome;
+	}
+
+	public String getIndirizzo() {
+		return indirizzo;
+	}
+
+	public void setIndirizzo(String indirizzo) {
 		this.indirizzo = indirizzo;
+	}
+
+	public String getProfessione() {
+		return professione;
+	}
+
+	public void setProfessione(String professione) {
 		this.professione = professione;
+	}
+
+	public Integer getEta() {
+		return eta;
+	}
+
+	public void setEta(Integer eta) {
 		this.eta = eta;
 	}
 
+	
 	@Override
 	public String toString() {
 		return "Persona [id=" + id + ", nome=" + nome + ", cognome=" + cognome + ", indirizzo=" + indirizzo
 				+ ", professione=" + professione + ", eta=" + eta + "]";
 	}
-	
 	
 	
 	
