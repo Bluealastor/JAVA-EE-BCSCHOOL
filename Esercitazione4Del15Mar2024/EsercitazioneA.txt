@@ -1,0 +1,112 @@
+A – Rispondi alle seguenti domande argomentando la risposta:
++ 1) Descrivi l’architettura monolitica.
+  + l'architettura Monolitica per la progettazione di un software implica la creazione dell'intero progetto in un unica entita che rende più complesso la mantenibilità, le modifiche perchè potrebbe risultare la modifica dell'intero progetto e se ci sono mal funzionamenti l'intero progetto rischia di non funzionare
+
++ 2) Che cos’è un microservizio?
+  + Per MicroServizio si intende un nuova architettura per la progettazione software dove si cerca di migliorare e eliminare le problematiche della progettazione Monilitic, 
+
+
++ 3) Definisci le differenze tra architettura monolitica e microservizi.
++  La differenza Tra architettura Monolitica e I M icroservizi è; 
+    + L'architettura dei Microservizi impone la sudivisione del codice in parti più piccole creando diversi vantaggi come come la mantenibilità, implementazione di nuove funzionalità, modifiche di una singola funzione e se ci sono mal funzionamenti il resto del codice continua a funzionare,
+
++ 4) Cosa si intente per xml? E per Json?
+  + xml e json sono entrambi formati di dati utilizzati per rappresentare e trasmettere informazioni tra sistemi software il json è preferito per il trasporto di dati per la velocità e semplicità
+
++ 5) Cosa si intente per scalabilità?
+  + Per scalabilità si intende la capacità di adattarsi e flessibilità all'aumento di dati e alla modifica del funzionamento di un programma
+
++ 6) Che ruolo ha il team nella realizzazione di un microservizio?
+  + Il team ha diversi ruoli nella realizzazione di un micro servizio partendo dallo sviluppo del micro servizio alla manutenzione all'implementazione di eventuali feature e dell'implementazione con l'intero progetto
+ 
+
++ 7) Cosa si intende per inconsistenza dei dati?
+  + Per inconsistenza di dati si intende alla condizione in cui gli stessi dati non sono coerenti con le aspettative o ci sono discrepanze tra loro 
+
++ 8) Che differenza c’è tra la comunicazione sincrona e quella asincrona?
+  + la differenza tra comunicazione sincrona e asincrona é:
+    + Sincrona: la trasmissione dei dati viene tutta contemporaneamente aumentando cos'ì i dati trasmessi in una singola comunicazione creando a volte rallentamenti fino a quando tutte le informazioni non vengono trasmesse bloccando così il funzionamento fino al completamento del download
+    + Asincrona: suddivide i dati trasmessi in parti più piccol,per funzionare le applicazioni non devono attendere la ricezione dell'intero dato ma ha la possibilità di poter lavorare in modo asincrono senza dover interrompere la sua funzione 
+
+ + 9) Definisci il Circuit Breaker.
+  + Il circuit Breaker è un Pattern di progettazione software per migliorare la stabilità, proteggendo il sitema da problematiche o fallimenti ripetuti interrompendo la connessione evitanto il crollo del sistema
+
++ 10) Cosa si intende per continuos deployment?
+  + E' una pratica di sviluppo software che prevede il rilascio di continui aggiornamenti direttamente in produzione dopo aver passato diversi test di funzionamento velocizzando il rilascio di nuove funzionalita e correzioni di bug
+
++ 11) Definisce un ORM.
+  + Per ORM si intende Object-Relation-Mapping ed è una tecnica di sviluppo software che permette di mappare gli oggetti di una tabella di un DB in un linguaggio di programmazione orientata ad oggetti come Java e consente di manipolare i dati di un DB utilizzando il codice di programmazione OO
+
++ 12) Come può essere classificato un sistema ORM? Argomenta.
+  + un sistema ORM puo essere diviso in quattro modi:
+    + Pure Relation -> tutta l'applicazione è porgettata sulla base del modello relazionale di SQL a scapito della portabilità
+    + Light Object Mapping -> le entità sono mappate a mano nel DB e la relazione è nascosto attraverso vari Design Pattern come DAO o DTO
+    + Medium Object mapping -> l'applicazione è progettata sull'object model è il linguaggio SQL è generato run Time da un Framework che supporta le associazioni tra oggetti
+    + Full Object Mapping -> esiste il supporto per ereditarietà, polimorfismo e persistenza trasparente in cui non bisogna esntendere le classi o implementare interfacce
+
++ 13) Cos’è Hibernate?
+  + Hibernate è un framework Open Source per il linguaggio java, usato per la sua capacità di gestire e semplificare il mappamento di Oggetto Relazione tra java e i Db relazionali
+
++ 14) Cosa si intende per persistenza dei dati?
+  + La persistenza dei dati si riferisce alla capacità di memorizzare e mantenere i dati nel tempo, anche dopo che l'applicazione che li ha generati è terminata o dopo che il dispositivo su cui risiede l'applicazione è stato spento o riavviato
+
++ 15) Quali sono le caratteristiche degli stati di persistenza?
+  + Le principali caratteristiche dei dati di persistenza sono 4:
+    + Transiet -> 
+
++ 16) Cos’è una session? E una Session Factory?
+  + Session: è un'istanza di lavoro con un database è anche responsabile di gestire il ciclo di vita degli oggetti,Durante la sessione è possibile caricare, salvare, modificare ed eliminare oggetti.
+  + Session Factory:  crea e fornisce sessioni è anche responsabile della configurazione e dell'iniziallizazione delle sessioni
+   
+
++ 17) Cosa si intende per jdbc?
+  + E' un API di java che consentedi accedere e gestire i dati di un DB relazionale utilizzando codice Java e permette di eseguire connessioni al DB inviare Query e di manipolare i dati
+
++ 18) Che cos’è la serializzazione? E la deserializzazione?
+  + La serializzazione è il processo di conversione di un oggetto Java in una sequenza di byte per poterli memorizare come Dati un un DB
+  + La deserializzazione è il processo di conversione di una sequenza di byte in un oggetto java per poter recuperare informazioni dal DB
+
++ 19) Cos’è Unified Modeling Language?
+  + È un metodo di rapresentazione del software che fornisce uno standard grafico per rappresentare diversi aspetti di un sistema software, inclusi i requisiti, la struttura, il comportamento e le interazioni tra i componenti del sistema.
+
++ 20) Definisci il diagramma delle classi
+  + il Diagramma delle classi viene definitto attraverso gli attributi, metodi e le relazioni per poter rappresentare in formato grafico le classi. alcuni attributi per la rappresentazione di visibilità degli attributi sono + se l'attributo o il metodo è pubblico, - se l'attributo o metodo è privato
+
++ 21) Spiega le differenze tra associazioni, aggregazioni e composizione.
+  + Associazione: rappresenta la relazione tra due o più classi, gli oggetti delle classi mantengono la propria esistenza indipendentemente dalla relazione,
+  + Agregazione: rapresenta la relazione tra due classi dove un oggetto di una classe è composto da uno o più oggetti di un altra classe
+  + Aggregazione%: rappresenta la relazione tra due calssi dove gli oggetti sono strettamente legati tra di loro e senza un oggetto non potrebbe esistere
+
++ 22) Si elenchino le caratteristiche di un Java Bean e quelle di un Entity Bean.
+  + Java Bean: Sono classi che hanno un costruttore senza parametri,gli attributi privati e sono accessibili solo attraverso i getter e i setter e sono serializzabili
+  + Entity Bean: Sono componenti lato server che rapresenta persistenti gestiti in un database e sono identificati da una chiave primaria
+
++ 23) Quali sono le differenze tra jdbs e hibernate?
+  + La differenza sono la gestione delle persistenze dei dati e l'astrazione, jdbc è un API di basso livello per l'interazione diretta con il database, Hibernate un framework che offre un livello di astrazione più di alto livello e semplifica notevolmente lo sviluppo e la gestione dei dati
+
++ 24) Descrivere il ciclo di vita di un’entità.
+  + Il ciclo di vita di un entità puo essere suddiviso in diverse fasi di creazi
+
++ 25) Quale libreria viene implementata ed estesa da Hibernate?
+  + Hibernate estende la libreria di jdbc 
+
++ 26) Descrivere Statement, Preparate Statement e Result Set.
+  + Statement: è utilizzata per eseguire query SQL statiche sul database.
+  + PreparedStatement: è utilizzata per eseguire query SQL parametriche sul database.
+  + ResultSet: è utilizzata per rappresentare il risultato di una query SQL eseguita sul database.
+
++ 27) A cosa serve il file hibernate.cfg.xml?
+  + Serve a configurare Hibernate all'interno di un'applicazione Java, fornendo informazioni per la connessione al database, il mapping degli oggetti, le strategie di generazione degli identificatori e altre impostazioni di runtime.
+
++ 28) A cosa serve il file pom.xml?
+  +  Serve nei progetti Java che utilizzano Maven, poiché contiene tutte le informazioni necessarie per la configurazione, la compilazione, il test e la distribuzione del software. 
+
++ 29) Quali sono le opzioni possibili per hibernate.hbm2ddl.auto?
+  + le opzioni sono: 
+    + Create: e serve a lo schema del DB se non esiste
+    + Update: e indica a Hibernate di aggiornare lo schema del database in base alle modifiche apportate 
+    + Validate: Questa opzione indica a Hibernate di convalidare lo schema del database 
+    + create-drop: eliminerà lo schema del database quando la SessionFactory viene chiusa
+
++ 30) Come si possono configurare le relazioni tra Entity in Hibernate?
+  +  vengono configurate utilizzando le annotazioni di Hibernate
