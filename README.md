@@ -74,7 +74,7 @@
 + Architetturamonolitica
 + Confrontotra limitazioni dell’architetturamonolitica e vantaggi dell’architettura aMicroservizi
 + Casi d’usodi applicazioni aMicroservizi
-+ 
+
 ### Utilizzo di JSP per visualizzare il contenuto:
 + Creazione di JSP
 + Comprensione della struttura dei file
