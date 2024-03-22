@@ -1,0 +1,116 @@
++ A – Rispondi alle seguenti domande argomentando la risposta: 
+ + 1) Cos’è un Maven Project?
+  + Maven Project è un progetto software gestito utilizzando Maven, uno strumento di gestione e automatizzazione del progetto,Maven semplifica il processo di compilazione, distribuzione e gestione delle dipendenze del progetto, fornendo una struttura coerente e convenzionale per l'organizzazione del codice sorgente e dei file di configurazione.
+
+
+
++ 2) Cosa si intende per persistenza? Ed in cosa consiste il contesto di persistenza?
+  + La persistenza si riferisce alla capacità di mantenere i dati oltre la durata di esecuzione del programma e consente ai dati di essere memorizzati in modo permanente come un database, un file o un servizio di archiviazione cloud
+
++ 3) Cosa si intende per Entity Manager?
+  + L'Entity Manager è un componente chiave nei contesti di persistenza dei dati, in particolare quando si utilizza l'ORM (Object-Relational Mapping) per gestire l'interazione tra oggetti e il database relazionale, ed è responsabile della gestione delle operazioni CRUD (Create, Read, Update, Delete) sugli oggetti persistenti dell'applicazione
+
++ 4) Quali sono le annotazioni necessarie alla configurazione di una Entity?
+  + Per mappare un progetto Java con hibernate abbiamo bisogno delle annotazioni di creazione entita @Entity,
+della creazione delle tabelle @Tabele, della creazione delle colonne di attributi @Column, queste sono le principali annotazioni per poter creare le tabelle con gli attributi. Esistono altre annotazioni per gestire le relazioni e alcuni dati come @Id per impostare come PRIMARY KEY un valore, @GeneratedValue utilizzata per specificare la creazione dei valori Utilizzato in concomitanza ad @Id e in fine le annotazioni chge servono a definire le relazioni tra le entita/tabelle nei DB @OneToMany e @ManyToOne
+
+
++ 5) Cosa è fetching? E cascade?
+  + Il fetching si riferisce al processo di recupero dei dati correlati da una relazione tra entità durante una query, possiamo gestire il carico di lavoro durante le richieste di dati impostando il tipo di richiesta in 2 modi;
+    + LAZY: lo utilizziamo se abbiamo dei dati che sono poco richiesti e non abbiamo il bisogno di caricarli nel momento stesso dell' oggetto principale ma solo quando servono
+    + EAGER: lo utilizziamo quando abbiamo bisogno che i dati vengano caricati insieme all'oggetto principale cosi da essere subito disponibili, ma potrebbe portare a rallentamenti se i dati non sono sempre richiesti
+
++ 6) Cosa si intende per Impedance Mismatch.
+  + si riferisce alla discrepanza o alla differenza tra i modelli di dati utilizzati in un'applicazione software e quelli utilizzati nel sistema di archiviazione dei dati.
+
+
++ 7) Elenca le strategie risolutive per Impedance Mismatch.
+  + Object-Relational Mapping (ORM):Utilizzare framework ORM come Hibernate in Java semplificando la persistenza dei dati fornendo un'astrazione orientata agli oggetti e gestendo automaticamente la conversione degli oggetti
+  + Utilizzo di linguaggi di query orientati agli oggetti: come  HQL (Hibernate Query Language) per eseguire query sul database in modo più intuitivo e compatibile con il modello di dati dell'applicazione.
+  + Utilizzo di database NoSQL: In alcuni casi, l'utilizzo di database NoSQL può essere una soluzione alternativa per ridurre l'Impedance Mismatch, poiché questi database spesso supportano modelli di dati più flessibili
+  + Mapping personalizzato:Questo offre maggiore flessibilità e controllo sulla trasformazione dei dati, ma può richiedere più lavoro di sviluppo e manutenzione.
+  + Architetture a livelli: Utilizzare un'architettura a livelli e per separare chiaramente la logica di business, la logica di accesso ai dati e la logica di presentazione dell'applicazione
+
+
++ 8) Cos’è un framework?
+  + Un framework è un'infrastruttura di supporto che fornisce un insieme di librerie, strumenti e linee guida per facilitare lo sviluppo di software, un framework offre una struttura predefinita e un insieme di funzionalità comuni che possono essere utilizzate per creare rapidamente e efficacemente applicazioni software complesse
+
++ 9) Che cos’è un design pattern?
+  + Un design pattern è una soluzione generica e riutilizzabile per un problema comune che si verifica frequentemente durante lo sviluppo del software, forniscono un approccio consolidato e ben testato per risolvere determinati problemi di progettazione e architettura del software, offrendo linee guida e best practice per la creazione di codice efficiente, manutenibile e scalabile.
+
+
++ 10) Che cos’è un POJO?
+  + POJO (Plain Old Java Object) si riferisce a una classe Java semplice, un POJO è una classe Java che non estende alcuna classe base specifica, non implementa alcuna interfaccia specifica e non richiede l'utilizzo di annotazioni o configurazioni particolari
+
++ 11) Cos’è una API?
+  + API è l'acronimo di "Application Programming Interface", un'API è un insieme di definizioni, protocolli e strumenti che consentono a diverse applicazioni software di comunicare tra loro. sono fondamentali nello sviluppo del software moderno e vengono utilizzate in una vasta gamma di contesti, tra cui lo sviluppo di applicazioni web, mobile, desktop, embedded e di backend. Consentono l'integrazione e l'interoperabilità tra sistemi diversi, facilitando lo sviluppo di applicazioni complesse e distribuite.
+
++ 12) Descrivi in generale lo Spring Framework.
+  + Lo Spring Framework è un framework open-source per lo sviluppo di applicazioni Java, è un potente strumento per lo sviluppo di applicazioni Java enterprise, offrendo una vasta gamma di funzionalità, flessibilità e supporto per una varietà di contesti di sviluppo
+
++ 13) Che differenza c’è tra Spring e Spring Boot?
+  + Spring Framework: è un framework completo e modulare per lo sviluppo di applicazioni enterprise Java, è altamente configurabile e offre un alto grado di flessibilità e richiede una configurazione esplicita e dettagliata per avviare un'applicazione,
+  + Spring Boot:è una progettazione che semplifica lo sviluppo di applicazioni Spring,Si basa sul concetto di "opinionated defaults" offre configurazioni predefinite sensibili per avviare rapidamente un'applicazione, Fornisce un meccanismo di auto-configurazione che identifica automaticamente le dipendenze dell'applicazionee include una serie di funzionalità aggiuntive per semplificare lo sviluppo
+
++ 14) A cosa serve il file application.properties?
+  + è un file di configurazione utilizzato principalmente nel contesto dello sviluppo di applicazioni Spring Boot  è utilizzato per definire diverse proprietà e configurazioni per l'applicazione, è possibile configurare il server integrato, la gestione delle dipendenze, la gestione delle proprietà dell'applicazione e molte altre funzionalità offerte da Spring Boot.
+
+
+
++ 15) Che cos’è IoC Container e come funziona?
+  + IoC (Inversion of Control) Container è uno dei concetti chiave all'interno del framework Spring, gestisce il ciclo di vita degli oggetti (beans) all'interno di un'applicazione Spring, 
+
++ 16) Cos’è una Dependency Injection?
+  + La Dependency Injection è un design pattern utilizzato nell'ambito dello sviluppo software per gestire le dipendenze tra i componenti di un'applicazione. 
+
++ 17) Cos’è Inversion of Control (IoC)?
+  +è un principio di progettazione software, si occupa di creare, gestire e coordinare i componenti dell'applicazione (come i bean), invertendo il controllo della loro creazione e gestione rispetto all'applicazione stessa
+
+
++ 18) Descrivere la funzione dell’annotazione @Component?
+  +  L'annotazione @Component è una delle annotazioni utilizzate nel framework Spring per identificare e definire i componenti all'interno di un'applicazione, viene utilizzato per dichiarare una classe come componente gestito dal container IoC di Spring.
+
++ 19) Come utilizziamo @Configuration?
+  + L'annotazione @Configuration è utilizzata in Spring per segnalare una classe come una classe di configurazione. All'interno di questa classe, è possibile definire metodi di configurazione dei bean utilizzando l'annotazione @Bean
+
+
++ 20) Per cosa utilizziamo l’annotazione @Autowired?
+  +  L'annotazione @Autowired è utilizzata in Spring per l'iniezione automatica delle dipendenze, consentendo di semplificare e automatizzare il processo di gestione delle dipendenze all'interno di un'applicazione. Utilizzando @Autowired, è possibile delegare a Spring la responsabilità di risolvere e fornire le dipendenze necessarie
+
++ 21) Quanti modi esistono per configurare Spring? Argomenta.
+  + Esistono 3 modi per configurare spring e sono:
+    +  XML: la configurazione dell'applicazione viene definita principalmente attraverso file XML, contengono le definizioni dei bean, le dipendenze tra i bean e altre configurazioni dell'applicazione e può diventare complicato da gestire in applicazioni complesse, in quanto la configurazione è dispersa su più file e può diventare difficile da mantenere.
+    +  annotazioni: utilizza annotazioni Java per definire la configurazione dell'applicazione.vengono utilizzate per definire i bean, le dipendenze e altre configurazioni direttamente nel codice sorgente
+    + JavaConfig: Queste classi contengono metodi annotati con @Bean che restituiscono istanze di bean, consentendo di definire la configurazione dell'applicazione direttamente nel codice Java, combina la flessibilità e la leggibilità delle annotazioni con la potenza e la programmabilità del codice Java
+
++ 22) Descrivi l’architettura di Spring Framework.
+  + L'architettura di Spring si basa su diversi moduli che collaborano tra loro per fornire funzionalità specifiche, Core Container il nucleo di Spring e include i moduli Core e Beans, Data Access fornisce supporto per l'accesso ai dati, Web Questo modulo fornisce supporto per lo sviluppo di applicazioni web, AOP (Aspect-Oriented Programming) fornisce supporto per la programmazione orientata agli aspetti, consentendo di separare le preoccupazioni trasversali come il logging, Test fornisce supporto per la scrittura di test unitari e di integrazione per le applicazioni Spring, Messaging ornisce supporto per la messaggistica asincrona, Security fornisce supporto per la sicurezza delle applicazioni Spring
+
++ 23) Cosa si intente per dirty-checking?
+  + Il dirty-checking è un meccanismo utilizzato nei framework ORM come Hibernate per monitorare e gestire le modifiche apportate agli oggetti persistenti all'interno di un'unità di persistenza
+
++ 24) Cosa rappresenta l’application context?
+  + L'Application Context è uno dei concetti fondamentali in Spring Framework ed è un contesto che contiene e gestisce tutti i bean, le configurazioni e le dipendenze di un'applicazione Spring
+
++ 25) Cos’è un Bean?
+  + un bean in Spring è un componente dell'applicazione gestito dal container IoC di Spring. Rappresenta un oggetto Java che viene creato, configurato e gestito all'interno del contesto dell'applicazione Spring
+
++ 26) Cosa si intende per Injection Point?
+  + l'injection point è il punto nel codice in cui avviene l'iniezione delle dipendenze esterne, consentendo alle classi di ottenere accesso ai componenti di cui hanno bisogno per eseguire le loro operazioni.
+
+
++ 27) Come posso agire sul life-cycle di un Bean. Argomenta.
+  + è possibile influenzare il ciclo di vita di un bean definendo callback o metodi specifici all'interno della classe del bean, L'annotazione @PostConstruct viene utilizzata per specificare un metodo da eseguire dopo che il bean è stato creato dal container  L'annotazione @PreDestroy  viene utilizzata per specificare un metodo da eseguire prima che il bean venga distrutto dal container
+
++ 28) Spiega l’utilizzo dell’annotazione @Lazy.
+  + 
+L'annotazione @Lazy in Spring viene utilizzata per indicare al container IoC di posticipare la creazione di un bean fino al momento in cui viene effettivamente richiesto. Non verrà creato durante la fase di inizializzazione del contesto dell'applicazione, ma verrà istanziato solo quando verrà richiesto per la prima volta.
+
+
++ 29) Cosa si intende per Bean Scope?
+  + Si intente la durata e la visibilità di un bean all'interno dell'applicazione, specifica quanto a lungo un bean rimane vivo e in che contesto è disponibile per essere utilizzato
+
++ 30) Come utilizziamo l’annotazione @Qualifier? E @Resource?
+  + Sono entrambe utilizzate in Spring Framework per risolvere l'ambiguità delle dipendenze quando ci sono più implementazioni disponibili di un'interfaccia o di una classe astratta, 
+    + @Qualifier è un'annotazione di Spring che viene utilizzata per specificare esattamente quale bean deve essere iniettato quando ci sono più implementazioni di una dipendenza, È necessario fornire un nome univoco per identificare il bean di destinazione. 
+    + @Resource è un'annotazione standard di Java EE che viene utilizzata per iniettare una dipendenza in base al nome del bean o al tipo
